@@ -30,6 +30,7 @@ import android.widget.TextView;
  */
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapterViewHolder> {
 
+
     // COMPLETED (23) Create a private string array called mWeatherData
     private String[] mWeatherData;
 

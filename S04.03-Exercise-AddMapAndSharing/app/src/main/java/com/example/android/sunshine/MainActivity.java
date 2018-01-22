@@ -201,6 +201,14 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         }
     }
 
+    private void openInMap(){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:0,0?q=1600+Amphitheatre+Parkway%2C+CA"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         /* Use AppCompatActivity's method getMenuInflater to get a handle on the menu inflater */
@@ -222,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         }
 
         // TODO (2) Launch the map when the map menu item is clicked
-
+        openInMap();
         return super.onOptionsItemSelected(item);
     }
 }
