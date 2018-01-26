@@ -30,6 +30,8 @@ public class SettingsActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_settings);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
         // TODO (2) Create an xml resource directory
         // TODO (3) Add a PreferenceScreen with an EditTextPreference and ListPreference within the newly created xml resource directory
 

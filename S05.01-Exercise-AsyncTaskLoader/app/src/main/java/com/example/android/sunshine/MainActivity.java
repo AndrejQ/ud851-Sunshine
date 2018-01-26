@@ -117,11 +117,12 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
      */
     private void loadWeatherData() {
         showWeatherDataView();
+        //getSupportLoaderManager().restartLoader(LOADER_ID, null, this); // this is correct
 
         LoaderManager loaderManager = getSupportLoaderManager();
         Loader<String[]> loader = loaderManager.getLoader(LOADER_ID);
         if (loader != null) {
-            loaderManager.restartLoader(LOADER_ID, new Bundle(), this);
+            loaderManager.restartLoader(LOADER_ID, null, this);
         } else {
             loaderManager.initLoader(LOADER_ID, new Bundle(), this);
         }
@@ -198,9 +199,6 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             @Override
             public String[] loadInBackground() {
                             /* If there's no zip code, there's nothing to look up. */
-//                if (weatherData.length == 0) {
-//                    return null;
-//                }
 
                 String location = SunshinePreferences.getPreferredWeatherLocation(MainActivity.this);
 
